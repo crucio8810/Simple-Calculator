@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    max-width: 450px;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 34px;
+    border-radius: 10px;
+}
+.title h3{
+    position: relative;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+.title h3::before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 28px;
+    left: 0;
+    bottom: 0;
+    background: seagreen;
+}
+.wrapper{
+    border-radius: 10px;
+    border: 2px solid seagreen ;
+    padding: 20px;
+}
+.wrapper .input-box{
+    margin: 15px 0;    
+}
+.input-box input,select{
+    width: 100%;
+    outline: none;
+    border: 2px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+label{
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: seagreen;
+}
+.wrapper button{
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+    border: 2px solid #575353;
+    padding: 5px 10px;
+    margin-bottom: 19px;
+    font-size: 1rem;
+    background: rgb(87, 192, 133);
+    font-weight: 500;
+    color: #fff;
+}
+.wrapper button:hover{
+    background: rgb(55, 143, 93);
+}
+.result {
+    width: 100%;
+    display:flex;
+    align-items: center;
+}
+.result label{
+    flex-grow: 1;
+}
+.result input{
+    outline: none;
+    border: 2px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-left: 10px;
+    width: 60%;
+    flex-grow: 1;
+    pointer-events: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+small{
+    color: red;
+}

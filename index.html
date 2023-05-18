@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Calculator</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="title">
+			<h3>Calculator</h3>
+		</div>
+		<div class="wrapper">
+
+			<div class="input-box">
+				<label><span>Number</span> 1 :</label>
+				<input type="number" class="num1" required placeholder="Enter number only" inputmode="numeric">
+				<small id="num1Error">Need to input number</small>
+			</div>
+			<div class="input-box">
+				<label><span>Number</span> 2 :</label>
+				<input type="number" class="num2" required placeholder="Enter number only">
+				<small id="num2Error">Need to input number</small>
+			</div>
+			<div class="input-box">
+				<label>Select Operator : </label>
+				<select id="operator">
+					<option value="empty" selected>Choose Option</option>
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+				<small id="opError">Need to choose operator</small>
+			</div>
+			<button id="calc">Calculate</button>
+
+			<div class="result">
+				<label>The Result is : </label>
+				<input type="text" id="result" value="0000" readonly>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	let num1,num2,op;
+	const Btn = document.getElementById("calc");
+	let result = document.getElementById("result"),
+		ans;
+	let num1Error = document.getElementById("num1Error"),
+		num2Error = document.getElementById("num2Error"),
+		opError = document.getElementById("opError");
+
+
+	num1Error.style.display = "none";
+	num2Error.style.display = "none";
+	opError.style.display = "none";
+
+
+	Btn.addEventListener("click", () => {
+	    num1 = document.querySelector(".num1"),
+		num2 = document.querySelector(".num2"),
+		op = document.getElementById("operator");
+
+		checkValidity(num1, num2, op);
+		num1 = parseInt(num1.value);
+		num2 = parseInt(num2.value);
+		selectedOp = op.value;
+
+		if (!num1Statue && !num2Statue && !opStatue) {
+			if (selectedOp === "+") {
+				ans = num1 + num2;
+				result.value = ans;
+			}
+			else if (selectedOp === "-") {
+				ans = num1 - num2;
+				result.value = ans;
+			}
+			else if (selectedOp === "*") {
+				ans = num1 * num2;
+				result.value = ans;
+			}
+			else if (selectedOp === "/") {
+				ans = num1 / num2;
+				result.value = ans;
+			}
+			else if (selectedOp === "empty") {
+				alert("choose an operator");
+			}
+		}
+	});
+
+	function checkValidity(num1, num2, operator) {
+		if (num1.value == "" || num1.value == null || num1.value == undefined) {
+			num1Error.style.display = "block";
+			num1Statue = true;
+		}
+		else {
+			num1Error.style.display = "none";
+			num1Statue = false;
+		}
+		if (num2.value == "" || num2.value == null || num2.value == undefined) {
+			num2Error.style.display = "block";
+			num2Statue = true;
+		}
+		else {
+			num2Error.style.display = "none";
+			num2Statue = false;
+		}
+		if (operator.value == "empty") {
+			opError.style.display = "block";
+			opStatue = true;
+		}
+		else {
+			opError.style.display = "none";
+			opStatue = false;
+		}
+
+	}
+</script>
+
+</html>
